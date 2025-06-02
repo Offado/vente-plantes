@@ -22,12 +22,13 @@ function ShoppingList({cart, updateCart}) {
     if(currentPlantSaved) {
       // Variable pour filtrer les produits par nom
       const cartFilteredCurrentPlant = cart.filter((plant) => plant.name !== name)
-      // Mise à jour des produits ajouté dans le panier
+      // Mise à jour des produits filtré dans le panier
       updateCart([
         ...cartFilteredCurrentPlant,
         {name, price, amount: currentPlantSaved.amount + 1}
       ])
     } else {
+      // Mise à jour du panier
       updateCart([
         ...cart,
         {name, price, amount: 1}
