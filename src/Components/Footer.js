@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "../Styles/Footer.css";
 import "../Styles/Btn-send.css";
+import { RiPlantFill } from "react-icons/ri";
+import { PiPlantFill } from "react-icons/pi";
+import { PiPottedPlantFill } from "react-icons/pi";
 
 function Footer() {
   // Récupérer le mail utilisateur avec la variable primitive
@@ -18,7 +21,13 @@ function Footer() {
   }
   return (
     <footer className="lmj-footer">
-      <div className="lmj-footer-elem">Pour les passionné(e)s de plantes</div>
+      <div className="lmj-footer-elem">
+        Pour les passionné(e)s de plantes 
+        <RiPlantFill size={20} style={{color: 'green'}} /> 
+        <PiPlantFill size={20} style={{color: 'green'}} />
+        <PiPottedPlantFill size={20} style={{color: 'green'}} />
+      </div>
+      <p>Laisser nous votre email:</p>
       <input
         value={inputValue} // affiche la valeur de la variable primitive
         onChange={handleInput} // sauvegarde la valeur de la variable primitive dans le state local useState

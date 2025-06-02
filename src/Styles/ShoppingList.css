@@ -3,15 +3,9 @@
 	padding: 32px;
 	display: flex;
 	flex-wrap: wrap;
-	max-width: 800px;
+	justify-content: center;
 }
 
-.lmj-sales {
-	position: absolute;
-	right: 0px;
-	top: 10px;
-	font-weight: 500;
-	color: white;
-	padding: 5px 10px;
-	background-color: #31b572;
+.lmj-shopping-list {
+	width: 100%;
 }
