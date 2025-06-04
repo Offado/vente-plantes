@@ -8,6 +8,14 @@ function Banner() {
     <div className="lmj-banner">
       <img src={logo} alt="la maison des plantes" className="lmj-logo" />
       <h1 className="lmj-title">{title}</h1>
+      <ul className="lmj-banner-nav">
+        <li>Accueil</li>
+        <li>Catégories</li>
+      </ul>
+      <div className="btn-Nav">
+        <button className="btn-contact">Contactez-moi</button>
+        <button className="btn-profil">Profil</button>
+      </div>
     </div>
   );
 }
