@@ -8,9 +8,6 @@ function Cart({ cart, updateCart }) {
     0
   );
 
-  // Création d'une référence mutable
-  const prevCart = useRef([]);
-
   // Variable primitive permettant d'afficher le panier ou de le cacher
   const [isOpen, setIsOpen] = useState(true);
 
@@ -23,6 +20,9 @@ function Cart({ cart, updateCart }) {
 
   // Variable primitive pour afficher un message d'ajout au panier
   const [message, setMessage] = useState("");
+
+  // Création d'une référence mutable
+  const prevCart = useRef([]);
 
   // useEffect pour afficher deux messages du panier
   useEffect(() => {
