@@ -1,14 +1,24 @@
 import logo from "./logo.svg";
 import "./App.css";
-import "../src/Styles/Layout.css"
+import "../src/Styles/Layout.css";
 import Banner from "./Components/Banner";
 import Cart from "./Components/Cart";
 import ShoppingList from "./Components/ShoppingList";
 import Footer from "./Components/Footer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
-  const [cart, updateCart] = useState([]);
+  const [cart, updateCart] = useState(() => {
+    // Charger le panier depuis le localStorage ou au démarrage avec []
+    const storedCart = localStorage.getItem("cart");
+    return storedCart ? JSON.parse(storedCart) : [];
+  });
+
+  // Sauvegarder dans localStorage à chaque changement du panier
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
+
   return (
     <div className="App">
       {/* Compposant pour afficher la barre de navigation */}

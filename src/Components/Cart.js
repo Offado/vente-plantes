@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../Styles/Cart.css";
+import { MdDelete } from "react-icons/md";
+
 
 function Cart({ cart, updateCart }) {
   // Variable pour calculer les prix et produits dans le panier
@@ -11,18 +13,18 @@ function Cart({ cart, updateCart }) {
   // Variable primitive permettant d'afficher le panier ou de le cacher
   const [isOpen, setIsOpen] = useState(true);
 
+  // Variable primitive pour afficher un message d'ajout au panier
+  const [message, setMessage] = useState("");
+
+  // Création d'une référence mutable ou d'un objet persistant dans le panier
+  const prevCart = useRef([]);
+
   // Supprimer une plante dans le panier
-  const removeFomCart = (nameToRemove) => {
+  const removeFromCart = (nameToRemove) => {
     updateCart((prevCart) =>
       prevCart.filter((item) => item.name !== nameToRemove)
     );
   };
-
-  // Variable primitive pour afficher un message d'ajout au panier
-  const [message, setMessage] = useState("");
-
-  // Création d'une référence mutable
-  const prevCart = useRef([]);
 
   // useEffect pour afficher deux messages du panier
   useEffect(() => {
@@ -77,9 +79,9 @@ function Cart({ cart, updateCart }) {
           <h2>Panier</h2>
           <ul>
             {cart.map(({ name, price, amount }, index) => (
-              <div key={`${name}-${index}`}>
+              <div className="listen-plant-cart" key={`${name}-${index}`}>
                 {name} {price}€ x {amount}
-                <button onClick={() => removeFomCart(name)}>Supprimer</button>
+                <MdDelete onClick={() => removeFromCart(name)} size={20} />
               </div>
             ))}
           </ul>

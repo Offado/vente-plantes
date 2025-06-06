@@ -28,3 +28,10 @@
 .lmj-cart-closed > button {
     color: black;
 }
+
+.listen-plant-cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

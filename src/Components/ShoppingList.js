@@ -37,7 +37,6 @@ function ShoppingList({ cart, updateCart }) {
       updateCart([...cart, { name, price, amount: 1 }]);
     }
   }
-  
 
   return (
     // Afficher les catégories et autres propriétés de plantList toujours utilisé la méthode map
